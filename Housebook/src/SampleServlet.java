@@ -29,10 +29,9 @@ public class SampleServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//文字コードの設定
+		//文字コードの設定j
 		response.setContentType("text/html; charset=UTF-8");
 
-		//ブラウザに表示されるHTMLの中身を書いていく
 		PrintWriter printWriter = response.getWriter();
 
 	    printWriter.println("<html>");
