@@ -5,19 +5,15 @@ public class Kakeibo {
 	private int month;
 	private int day;
 	private int money;
-	private int income;
-	private int spending;
 	private String content;
 
 
-	public Kakeibo(int id, int month, int day, int money, int income, int spending,String content) {
+	public Kakeibo(int id, int month, int day, int money, String content) {
 		super();
 		this.id = id;
 		this.month = month;
 		this.day = day;
 		this.money = money;
-		this.income = income;
-		this.spending = spending;
 		this.content = content;
 	}
 
@@ -59,26 +55,6 @@ public class Kakeibo {
 
 	public void setMoney(int money) {
 		this.money = money;
-	}
-
-
-	public int getIncome() {
-		return income;
-	}
-
-
-	public void setIncome(int income) {
-		this.income = income;
-	}
-
-
-	public int getSpeding() {
-		return spending;
-	}
-
-
-	public void setSpeding(int speding) {
-		this.spending = speding;
 	}
 
 

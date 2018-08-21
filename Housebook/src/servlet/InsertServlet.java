@@ -15,7 +15,7 @@ import dto.Kakeibo;
 /**
  * Servlet implementation class show
  */
-@WebServlet("//InsertServlet")
+@WebServlet("/InsertServlet")
 public class InsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -36,16 +36,14 @@ public class InsertServlet extends HttpServlet {
 
 		try{
 			int id = Integer.parseInt(request.getParameter("Bookid"));
-			int month = Integer.parseInt("Bookmonth");
-			int day = Integer.parseInt("Bookday");
-			int money = Integer.parseInt("Bookmoney");
-			int income = Integer.parseInt("Bookincome");
-			int spending = Integer.parseInt("Bookspending");
+			int month = Integer.parseInt(request.getParameter("Bookmonth"));
+			int day = Integer.parseInt(request.getParameter("Bookday"));
+			int money = Integer.parseInt(request.getParameter("Bookmoney"));
 			String content = request.getParameter("Bookcontent");
 
-			Kakeibo result = KakeiboDao.insertDao(id, month, day, money, income,spending,content);
+			Kakeibo result = KakeiboDao.insertDao(id, month, day, money,content);
 			request.setAttribute("Insert", result);
-			String view = "/WEB-INF/view/result.jsp";
+			String view = "/WEB-INF/view/Insert.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 			}catch(NumberFormatException e){
